@@ -3,17 +3,19 @@ import ReactDOM from "react-dom";
 import reactToWebComponent from "react-to-webcomponent";
 
 interface State {
-  fBreed: number;
-  fMove: number;
+  sBreed: number;
+  sMove: number;
+  sStarve: number;
 }
 interface Props {}
 
-export default class WatorGrid extends React.Component<Props, State> {
+export default class WatorShark extends React.Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
-        fBreed: 0,
-        fMove: 0
+        sBreed: 0,
+        sMove: 0,
+        sStarve: 0
     };
   }
 
@@ -21,7 +23,7 @@ export default class WatorGrid extends React.Component<Props, State> {
    
 
     return (
-      <div className="wator-fish">
+      <div className="wator-shark">
         <div className="container">
           🐟
       </div>  
@@ -31,6 +33,6 @@ export default class WatorGrid extends React.Component<Props, State> {
 }
 
 customElements.define(
-  "wator-grid",
-  reactToWebComponent(WatorGrid, React, ReactDOM)
+  "wator-shark",
+  reactToWebComponent(WatorShark, React, ReactDOM)
 );
