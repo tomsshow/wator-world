@@ -8,7 +8,7 @@ interface State {
 }
 interface Props {}
 
-export default class WatorGrid extends React.Component<Props, State> {
+export default class WatorFish extends React.Component<Props, State> {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +31,6 @@ export default class WatorGrid extends React.Component<Props, State> {
 }
 
 customElements.define(
-  "wator-grid",
+  "wator-fish",
   reactToWebComponent(WatorGrid, React, ReactDOM)
 );
