@@ -1,12 +1,21 @@
 {
-  "dependencies":{
+  "dependencies": {
     "react": "^16.13.0",
-    "react-dom":"^16.13.0"
+    "react-dom": "^16.13.0"
   },
   "name": "@wcd/tomsshow.wator-world-fork-kyz1kcx3",
   "version": "0.0.0",
   "scripts": {
-    "serve": "npx wcd-cli@latest serve oxMjcYBw5qVPImWbpOdJ --open"
-  }
+    "serve": "npx wcd-cli@latest serve oxMjcYBw5qVPImWbpOdJ --open",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1"
+  },
+  "type": "module"
 }
-
