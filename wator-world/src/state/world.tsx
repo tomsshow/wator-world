@@ -23,7 +23,7 @@ export default class World {
     }
 
     /** */
-    getEntityAt(x: number, y: number){
+    getEntityAt(x: number, y: number): Entity|null {
         for (const v of this.entities) {
             if (v.x === x && v.y === y) {
                 return v;
@@ -33,12 +33,12 @@ export default class World {
     }
 
     /** */
-    removeEntity(entity){
+    removeEntity(entity: Entity) {
         throw new Error("unimplimented");
     }
 
     /** */
-    getAdjacentLocations(){
+    getAdjacentLocations(x: number, y: number): [number, number][] {
         throw new Error("unimplimented");
     }
 }
