@@ -4,11 +4,13 @@ export default class World {
     width: number;
     height: number;
     entities: Array<Entity>;
+    locations: Array<number>;
 
-    constructor(width: number, height: number) {
+    constructor(width: number, height: number, locations:[][]) {
         this.width = width;
         this.height = height;
         this.entities = [];
+        this.locations = [][];
     }
 
 
@@ -39,6 +41,6 @@ export default class World {
 
     /** */
     getAdjacentLocations(x: number, y: number): [number, number][] {
-        throw new Error("unimplimented");
+        
     }
 }
