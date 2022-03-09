@@ -7,6 +7,9 @@ export default class World {
     entities: Array<Entity>;
 
     constructor(width: number, height: number) {
+        console.assert(width >= 0);
+        console.assert(height >= 0);
+
         this.width = width;
         this.height = height;
         this.entities = [];

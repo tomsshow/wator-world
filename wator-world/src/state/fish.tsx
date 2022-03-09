@@ -8,6 +8,10 @@ export default class Fish extends Entity {
     }
 
     tick(world: World) {
-        throw new Error("unimplimented");
+        const adjacentLocations = Array.from(world.getAdjacentLocations(this.x, this.y).values());
+
+        // Uncondtionally move to the first location in the list.
+        this.x = adjacentLocations[0][0];
+        this.y = adjacentLocations[0][1];
     }
 }
