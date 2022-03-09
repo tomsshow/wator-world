@@ -4,13 +4,11 @@ export default class World {
     width: number;
     height: number;
     entities: Array<Entity>;
-    locations: Array<number>;
 
-    constructor(width: number, height: number, locations:[][]) {
+    constructor(width: number, height: number) {
         this.width = width;
         this.height = height;
         this.entities = [];
-        this.locations = [][];
     }
 
 
@@ -40,7 +38,11 @@ export default class World {
     }
 
     /** */
-    getAdjacentLocations(x: number, y: number): [number, number][] {
-        
+    getAdjacentLocations(x: number, y: number): Set<[number, number]> {
+        let ret = new Set<[number, number]>();
+
+        // TODO: implement me!
+
+        return ret;
     }
 }
