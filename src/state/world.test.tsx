@@ -108,9 +108,15 @@ test('Get adjacent wrap down', () => {
 // [   ][ y ][ x ][ y ][   ] // 4
 })
 
+//extra credit
 test('Get adjacent works with small grids', () => {
     const world = new World(2, 2);
     const adjacents = world.getAdjacentLocations(0,0);
     const expected = new Set([[1, 0], [0, 1]]);
     expect(adjacents).toEqual(expected);
+
+//visual expectation    
+//   0    1     
+// [ r ][ y ] // 0
+// [ y ][   ] // 1
 })
