@@ -111,6 +111,6 @@ test('Get adjacent wrap down', () => {
 test('Get adjacent works with small grids', () => {
     const world = new World(2, 2);
     const adjacents = world.getAdjacentLocations(0,0);
-    const expected = new Set([[1, 0], [0, 1], [1, 1]]);
+    const expected = new Set([[1, 0], [0, 1]]);
     expect(adjacents).toEqual(expected);
 })
