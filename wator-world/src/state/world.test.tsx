@@ -44,8 +44,11 @@ test('Get adjacent simple', () => {
 
 test('Get adjacent wrap left', () => {
     const world = new World(5,5);
-    const adjacent = world.getAdjacentLocations(0,2);
-    
+    const adjacents = world.getAdjacentLocations(0,2);
+
+    const expected = new Set([ [0,1], [0, 3], [1, 2], [4,2] ]);
+
+    expect(adjacents).toEqual(expected);
 //visual expectation    
 //   0    1    2    3    4 
 // [   ][   ][   ][   ][   ] // 0
@@ -58,41 +61,49 @@ test('Get adjacent wrap left', () => {
 
 test('Get adjacent wrap right', () => {
     const world = new World(5,5);
-    world.getAdjacentLocations(4,2);
+    const adjacents = world.getAdjacentLocations(4,2);
 
-    
+    const expected = new Set([ [0,2], [3, 2], [4, 1], [4,3] ]);
+
+    expect(adjacents).toEqual(expected);
 //visual expectation    
 //   0    1    2    3    4 
 // [   ][   ][   ][   ][   ] // 0
-// [   ][   ][   ][   ][   ] // 1
-// [   ][   ][   ][   ][ x ] // 2
-// [   ][   ][   ][   ][   ] // 3
+// [   ][   ][   ][   ][ y ] // 1
+// [ y ][   ][   ][ y ][ x ] // 2
+// [   ][   ][   ][   ][ y ] // 3
 // [   ][   ][   ][   ][   ] // 4
 
 })
 
 test('Get adjacent wrap up', () => {
     const world = new World(5,5);
-    world.getAdjacentLocations(2,0);
-    
+    const adjacents = world.getAdjacentLocations(2,0);
+
+    const expected = new Set([ [1,0], [2, 1], [2, 4], [3,0] ]);
+
+    expect(adjacents).toEqual(expected);
 //visual expectation    
 //   0    1    2    3    4 
-// [   ][   ][ x ][   ][   ] // 0
-// [   ][   ][   ][   ][   ] // 1
+// [   ][ y ][ x ][ y ][   ] // 0
+// [   ][   ][ y ][   ][   ] // 1
 // [   ][   ][   ][   ][   ] // 2
 // [   ][   ][   ][   ][   ] // 3
-// [   ][   ][   ][   ][   ] // 4
+// [   ][   ][ y ][   ][   ] // 4
 })
 
 test('Get adjacent wrap down', () => {
     const world = new World(5,5);
-    world.getAdjacentLocations(2,4);
-    
+    const adjacents = world.getAdjacentLocations(2,4);
+
+    const expected = new Set([ [1,4], [2, 0], [2, 3], [3,4] ]);
+
+    expect(adjacents).toEqual(expected);
 //visual expectation    
 //   0    1    2    3    4 
-// [   ][   ][   ][   ][   ] // 0
+// [   ][   ][ y ][   ][   ] // 0
 // [   ][   ][   ][   ][   ] // 1
 // [   ][   ][   ][   ][   ] // 2
-// [   ][   ][   ][   ][   ] // 3
-// [   ][   ][ x ][   ][   ] // 4
+// [   ][   ][ y ][   ][   ] // 3
+// [   ][ y ][ x ][ y ][   ] // 4
 })
