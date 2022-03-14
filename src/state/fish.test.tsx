@@ -69,3 +69,7 @@ test('when a fish is ready to breed and there is an adjacent empty location, we 
     expect(false).toEqual(true);
 
 })
+
+test('when a fish is ready to breed and there is no adjacent location, what do we do???', () => {
+    expect(false).toEqual(true);
+})
