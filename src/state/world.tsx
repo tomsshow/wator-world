@@ -50,12 +50,22 @@ export default class World {
         throw new Error("unimplimented");
     }
 
-    /** */
+    /** 
+    */
     getAdjacentLocations(x: number, y: number): Set<[number, number]> {
-        let ret = new Set<[number, number]>();
+        
+        console.assert(this.height > 0);
+        console.assert(this.width > 0);
+        console.assert(x >= 0);
+        console.assert(x < this.width);
+        console.assert(y >= 0);
+        console.assert(y < this.height);
 
-        // TODO: implement me!
-
-        return ret;
+        return new Set<[number,number]>([
+            [(x+this.width-1)%this.width,y],
+            [(x+1)%this.width ,y],
+            [x,(y+this.height-1)%this.height],
+            [x,(y+1)%this.height]
+        ])
     }
 }

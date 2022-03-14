@@ -60,8 +60,11 @@ test('when there are two adjacent locations and one is full, we move to the empt
 
 test('when a fish is not ready to breed and there is an adjacent empty location, we move there and our old location is empty', () => {
     // TODO implement me
+    expect(false).toEqual(true);
 })
 
 test('when a fish is ready to breed and there is an adjacent empty location, we create a new fish', () => {
     // TODO implement me
+    expect(false).toEqual(true);
+
 })
