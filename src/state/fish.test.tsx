@@ -48,7 +48,7 @@ test('when there are two adjacent locations and one is full, we move to the empt
     world.addEntity(redFish);
     world.addEntity(blueFish);
 
-    jest.spyOn(world, "getAdjacentLocations").mockImplementation((x,y) => new Set([[blueFish.x, blueFish.y]]));
+    jest.spyOn(world, "getAdjacentLocations").mockImplementation((x,y) => new Set([[blueFish.x, blueFish.y], [1,0]]));
 
 
     expect(false).toEqual(true);
