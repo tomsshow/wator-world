@@ -3,7 +3,7 @@ import Fish from './fish';
 import World from './world';
 
 test('when there is an empty adjacent location, we move to it', ()=>{
-    let fish = new Fish(1, 1);
+    let fish = new Fish(1, 1, 3);
     let world = new World(3, 3);
 
     jest.spyOn(world, "getAdjacentLocations").mockImplementation((x,y) => new Set([[1,2]]));
@@ -15,11 +15,11 @@ test('when there is an empty adjacent location, we move to it', ()=>{
 })
 
 test('when all adjacent locations already have a fish, we stay in place', ()=> {
-    let redFish = new Fish(1,1);
-    let blueFish1 = new Fish(1,0);
-    let blueFish2 = new Fish(0,1);
-    let blueFish3 = new Fish(2,1);
-    let blueFish4 = new Fish(1,2);
+    let redFish = new Fish(1,1,3);
+    let blueFish1 = new Fish(1,0,3);
+    let blueFish2 = new Fish(0,1,3);
+    let blueFish3 = new Fish(2,1,3);
+    let blueFish4 = new Fish(1,2,3);
 
 
 
@@ -48,9 +48,8 @@ test('when all adjacent locations already have a fish, we stay in place', ()=> {
 })
 
 test('when there are two adjacent locations and one is full, we move to the empty location', () => {
-    // TODO implement me
-    let redFish = new Fish(0,1);
-    let blueFish = new Fish(0,0);
+    let redFish = new Fish(0,1,3);
+    let blueFish = new Fish(0,0,3);
     
 
     let world = new World(3,3);
@@ -73,7 +72,17 @@ test('when there are two adjacent locations and one is full, we move to the empt
 
 test('when a fish is not ready to breed and there is an adjacent empty location, we move there and our old location is empty', () => {
     // TODO implement me
-    expect(false).toEqual(true);
+    let redFish = new Fish(0,1,3);
+    let world = new World(3,3);
+
+    world.addEntity(redFish);
+
+    jest.spyOn(world, "getAdjacentLocations").mockImplementation((x,y) => new Set([[1, 1]]));
+    
+    redFish.tick(world);
+
+    expect(redFish.getBreedValue).toBeLessThan(3);
+    
 })
 
 test('when a fish is ready to breed and there is an adjacent empty location, we create a new fish', () => {

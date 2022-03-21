@@ -2,10 +2,12 @@ export default class Entity{
 
     x: number;
     y: number;
+    breed: number;
     
-    constructor(x: number, y: number){
+    constructor(x: number, y: number, breed: number){
         this.x = x;
         this.y = y;
+        this.breed = breed;
     }
 
     /** */
